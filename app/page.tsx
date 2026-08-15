@@ -4,6 +4,7 @@ import { Ecosystem, ProductShowcases } from "@/components/ecosystem";
 import { FAQ } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
+import { FreeCommunity } from "@/components/free-community";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Library, SalesKit } from "@/components/library-sales";
@@ -24,7 +25,7 @@ export default function Home() {
     ],
   };
 
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/><Header/><main><Hero/><LovableProblem/><ExtensionSolution/><ExtensionDemo/><CompleteOffer/><Ecosystem/><ProductShowcases/><Community/><Course/><Library/><SalesKit/><Process/><Audience/><Pricing/><FAQ/><FinalCTA/></main><Footer/><a className="mobile-sticky-cta" href="#planos">Ver planos <ArrowIcon/></a></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/><Header/><main><Hero/><LovableProblem/><ExtensionSolution/><ExtensionDemo/><CompleteOffer/><Ecosystem/><ProductShowcases/><Community/><Course/><Library/><SalesKit/><Process/><Audience/><Pricing/><FreeCommunity/><FAQ/><FinalCTA/></main><Footer/><a className="mobile-sticky-cta" href="#planos">Ver planos <ArrowIcon/></a></>;
 }
 
 function ArrowIcon() {
