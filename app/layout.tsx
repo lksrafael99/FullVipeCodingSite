@@ -4,7 +4,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fullvibecoding.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fullvipecoding.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
