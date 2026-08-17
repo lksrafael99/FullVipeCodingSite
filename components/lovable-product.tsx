@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AlertCircle, ArrowDown, Check, CircleDollarSign, Code2, Gauge, Layers3, MousePointerClick, Play, RefreshCw, ShieldCheck, Sparkles, WandSparkles } from "lucide-react";
+import { AlertCircle, ArrowDown, Check, CircleDollarSign, Code2, Gauge, Layers3, MousePointerClick, RefreshCw, ShieldCheck, Sparkles, WandSparkles } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 
 const creditMoments = [
@@ -25,7 +25,7 @@ export function ExtensionSolution() {
 }
 
 export function ExtensionDemo() {
-  return <section className="section demo-section" id="demonstracao"><div className="container"><SectionHeading align="center" kicker="demonstração real" title={<>VEJA COMO <span>FUNCIONA.</span></>} description="Esta área está preparada para mostrar a extensão funcionando dentro do Lovable com material real do produto."/><div className="demo-frame"><div className="demo-toolbar"><div><i/><i/><i/></div><span>FULL VIBE CODING × LOVABLE</span><b>DEMO</b></div><div className="demo-placeholder"><div className="demo-play"><Play/></div><strong>INSERIR DEMONSTRAÇÃO REAL</strong><p>Vídeo, GIF, screenshots ou comparação antes/depois.</p><small>Substituir por mídia validada da extensão antes do lançamento</small></div></div><div className="demo-options"><span>01 — VÍDEO</span><span>02 — GIF</span><span>03 — SCREENSHOTS</span><span>04 — ANTES / DEPOIS</span></div></div></section>;
+  return <section className="section demo-section" id="demonstracao"><div className="container"><SectionHeading align="center" kicker="demonstração real" title={<>VEJA COMO <span>FUNCIONA.</span></>} description="Veja a extensão funcionando dentro do Lovable, com material real do produto."/><div className="demo-frame"><div className="demo-toolbar"><div><i/><i/><i/></div><span>FULL VIBE CODING × LOVABLE</span><b>DEMO</b></div><div className="demo-video-wrap"><iframe className="demo-video" src="https://www.youtube-nocookie.com/embed/bpvQRyLbgR0?rel=0&modestbranding=1" title="Demonstração da extensão Full Vipe Coding e Portal de Membros" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen/></div></div></div></section>;
 }
 
 const offerItems = ["Extensão para Lovable", "LeadHunter", "Comunidade privada no WhatsApp", "Curso gratuito para iniciantes", "Biblioteca de prompts", "Templates e estruturas de projetos", "Kit de prospecção", "Materiais de vendas", "Suporte da comunidade", "Conteúdos conforme disponibilizados"];
