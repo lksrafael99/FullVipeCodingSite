@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     description: "Crie mais no Lovable e reduza desperdícios de créditos com um fluxo mais eficiente.",
     images: ["/brand/full-vibe-coding-logo.png"],
   },
-  icons: { icon: "/brand/full-vibe-coding-logo.png", apple: "/brand/full-vibe-coding-logo.png" },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#07080b" };
