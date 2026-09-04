@@ -1,33 +1,47 @@
-import { Audience } from "@/components/audience";
-import { Community, Course } from "@/components/community";
-import { Ecosystem, ProductShowcases } from "@/components/ecosystem";
+import { Community } from "@/components/community";
 import { FAQ } from "@/components/faq";
+import { Features } from "@/components/features";
 import { FinalCTA } from "@/components/final-cta";
+import { Flow } from "@/components/flow";
 import { Footer } from "@/components/footer";
-import { FreeCommunity } from "@/components/free-community";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Library, SalesKit } from "@/components/library-sales";
-import { CompleteOffer, ExtensionDemo, ExtensionSolution, LovableProblem } from "@/components/lovable-product";
+import { MobileStickyCta } from "@/components/mobile-sticky-cta";
+import { MotionEffects } from "@/components/motion-effects";
 import { Pricing } from "@/components/pricing";
-import { Process } from "@/components/process";
+import { purchaseConfig } from "@/config/purchase";
 
 export default function Home() {
+  const annual = purchaseConfig.plans.annual;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Extensão Full Vibe Coding para Lovable",
-    description: "Extensão para otimizar o fluxo no Lovable, reduzir desperdício de créditos e criar projetos com mais eficiência.",
+    name: "Full Vibe Coding — Plataforma de Membros",
+    description: "Plataforma para aprender, criar, prospectar, organizar e vender projetos digitais: cursos, tutoriais, LeadHunter, CRM, criador de sites, criador de prompts, gerador de mensagens, calculadora de orçamento, biblioteca de arquivos, templates e comunidade.",
     brand: { "@type": "Brand", name: "Full Vibe Coding" },
-    offers: [
-      { "@type": "Offer", name: "Plano mensal", price: "59.99", priceCurrency: "BRL", availability: "https://schema.org/InStock" },
-      { "@type": "Offer", name: "Plano vitalício", price: "497", priceCurrency: "BRL", availability: "https://schema.org/InStock" },
-    ],
+    offers: {
+      "@type": "Offer",
+      name: annual.name,
+      price: annual.price?.replace(/\D/g, "") ?? undefined,
+      priceCurrency: "BRL",
+      availability: "https://schema.org/InStock",
+    },
   };
 
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/><Header/><main><Hero/><LovableProblem/><ExtensionSolution/><ExtensionDemo/><CompleteOffer/><Ecosystem/><ProductShowcases/><Community/><Course/><Library/><SalesKit/><Process/><Audience/><Pricing/><FreeCommunity/><FAQ/><FinalCTA/></main><Footer/><a className="mobile-sticky-cta" href="#planos">Ver planos <ArrowIcon/></a></>;
-}
-
-function ArrowIcon() {
-  return <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>;
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+    <MotionEffects />
+    <Header />
+    <main>
+      <Hero />
+      <Features />
+      <Flow />
+      <Community />
+      <Pricing />
+      <FAQ />
+      <FinalCTA />
+    </main>
+    <Footer />
+    <MobileStickyCta />
+  </>;
 }

@@ -17,6 +17,6 @@ export function startPurchase(planId: PlanId) {
   }
 
   window.alert(
-    "Canal de compra em configuração. Defina NEXT_PUBLIC_PURCHASE_WHATSAPP ou a URL de checkout no arquivo .env.local.",
+    "As compras estão temporariamente indisponíveis. Tente novamente em breve.",
   );
 }

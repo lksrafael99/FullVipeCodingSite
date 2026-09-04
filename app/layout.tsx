@@ -8,12 +8,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fullvipecoding.com"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Extensão para Lovable | Full Vibe Coding",
-  description: "Faça seus créditos renderem melhor no Lovable com uma extensão criada para reduzir desperdícios e tornar seu fluxo de criação mais eficiente.",
+  title: "Full Vibe Coding | Plataforma para Aprender, Criar, Prospectar e Vender com IA",
+  description: "Cursos, tutoriais, LeadHunter, CRM, criador de sites, criador de prompts, gerador de mensagens, calculadora de orçamento, biblioteca de arquivos, templates e comunidade em uma única plataforma.",
+  keywords: ["plataforma de criação de sites", "prospecção com IA", "CRM", "LeadHunter", "criador de prompts", "cursos de IA", "templates de sites"],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Seus créditos do Lovable podem render muito mais",
-    description: "Extensão para Lovable com LeadHunter, curso, prompts e comunidade privada no WhatsApp.",
+    title: "Full Vibe Coding — aprenda, crie, prospecte e venda",
+    description: "Cursos, ferramentas de prospecção e CRM, criador de sites, prompts, mensagens, materiais e comunidade em uma única plataforma. Também disponível como PWA no celular.",
     url: "/",
     siteName: "Full Vibe Coding",
     locale: "pt_BR",
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Extensão para Lovable | Full Vibe Coding",
-    description: "Crie mais no Lovable e reduza desperdícios de créditos com um fluxo mais eficiente.",
+    title: "Full Vibe Coding | Plataforma para criar, prospectar e vender com IA",
+    description: "Cursos, LeadHunter, CRM, criador de sites, prompts, mensagens, materiais e comunidade em um único acesso.",
     images: ["/brand/full-vibe-coding-logo.png"],
   },
 };

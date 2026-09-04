@@ -1,6 +1,6 @@
 import type { PlanId } from "@/config/purchase";
 
-type EventName = "view_pricing" | "click_monthly" | "click_lifetime" | "purchase_start" | "click_community";
+type EventName = "view_pricing" | "click_lifetime" | "purchase_start" | "click_community";
 
 export function trackEvent(name: EventName, data?: Record<string, string>) {
   if (typeof window === "undefined") return;
@@ -13,6 +13,6 @@ export function trackEvent(name: EventName, data?: Record<string, string>) {
 }
 
 export function trackPlanClick(plan: PlanId) {
-  trackEvent(plan === "monthly" ? "click_monthly" : "click_lifetime", { plan });
+  trackEvent("click_lifetime", { plan });
   trackEvent("purchase_start", { plan });
 }

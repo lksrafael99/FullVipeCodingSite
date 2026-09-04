@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 
 const links = [
-  ["O problema", "#problema"],
-  ["A extensão", "#extensao"],
-  ["O que você recebe", "#oferta"],
-  ["Planos", "#planos"],
+  ["Ferramentas", "#ferramentas"],
+  ["Conteúdos", "#conteudos"],
+  ["Comunidade", "#comunidade"],
   ["FAQ", "#faq"],
 ];
 
@@ -31,10 +30,10 @@ export function Header() {
           {links.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
           ))}
-          <a className="button button-small button-primary mobile-nav-cta" href="#planos">Otimizar meu Lovable</a>
+          <a className="button button-small button-primary mobile-nav-cta" href="#acesso">Quero acesso</a>
         </nav>
-        <a className="button button-small button-primary desktop-nav-cta" href="#planos">Otimizar meu Lovable</a>
-        <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>
+        <a className="button button-small button-primary desktop-nav-cta cta-glow" href="#acesso" data-magnetic>Quero acesso</a>
+        <button className="menu-button" type="button" onClick={() => setOpen((current) => !current)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
       </div>

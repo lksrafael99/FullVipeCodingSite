@@ -1,6 +1,7 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
+import { purchaseConfig } from "@/config/purchase";
 import { PurchaseButton } from "./purchase-button";
 
-export function FinalCTA() {
-  return <section className="final-cta"><div className="final-grid"/><div className="container final-inner"><span className="kicker">{"// CRIE MAIS. DESPERDICE MENOS."}</span><h2>FAÇA SEUS CRÉDITOS DO LOVABLE<br/><span>RENDEREM MUITO MAIS.</span></h2><p>Extensão para Lovable, LeadHunter, curso, prompts e comunidade privada no WhatsApp.</p><div className="final-actions"><PurchaseButton plan="monthly">Plano mensal — R$ 59,99</PurchaseButton><PurchaseButton plan="lifetime" className="button button-light">Acesso vitalício — R$ 497 <ArrowRight size={18}/></PurchaseButton></div><div className="final-trust"><span><Check/> Não cria créditos extras</span><span><Check/> Foco em eficiência</span><span><Check/> Suporte em comunidade</span></div></div></section>;
-}
+const annual = purchaseConfig.plans.annual;
+
+export function FinalCTA(){return <section className="section final-cta"><div className="final-grid"/><div className="final-orb"/><div className="container final-inner" data-reveal><span>FULL VIBE CODING</span><h2>SUA PRÓXIMA IDEIA<br/><b>COMEÇA AQUI.</b></h2><p>Aprenda. Crie. Prospecte. Organize. Venda. Evolua.</p><PurchaseButton plan="annual" className="button button-primary button-shine">Quero entrar na Full Vibe <ArrowUpRight/></PurchaseButton><div><span><Check/> {annual.price}/ano</span><span><Check/> 12 meses de acesso</span><span><Check/> Ecossistema completo</span></div></div></section>}
