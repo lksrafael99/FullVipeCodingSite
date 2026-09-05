@@ -137,10 +137,12 @@ button { font: inherit; }
 .price-card { position: relative; overflow: hidden; max-width: 420px; margin: auto; padding: 42px; border: 1px solid rgba(117,87,255,.38); border-radius: 20px; background: linear-gradient(145deg, rgba(117,87,255,.1), #0c0f16 35%); box-shadow: var(--shadow), 0 0 90px rgba(117,87,255,.08); text-align: left; }
 .price-glow { position: absolute; width: 300px; height: 300px; right: -160px; top: -170px; border-radius: 50%; background: var(--purple); filter: blur(80px); opacity: .22; }
 .price-card-name { position: relative; margin: 0; color: #9aa2ae; font: 700 11px var(--display); letter-spacing: .1em; text-transform: uppercase; }
-.price { position: relative; display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; gap: 6px; margin: 18px 0 27px; }
+.price { position: relative; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 18px 0 4px; }
 .price > span { color: #8b93a0; font: 600 19px var(--display); }
-.price strong { font: 650 76px/.8 var(--display); letter-spacing: -.06em; }
-.price small { align-self: end; color: #69717e; font-size: 9px; text-transform: uppercase; }
+.price strong { font: 650 52px/.9 var(--display); letter-spacing: -.03em; word-break: break-word; }
+.price small { color: #8b93a0; font: 700 15px var(--display); text-transform: none; }
+.price-note { position: relative; margin: 0 0 14px; color: #6b7380; font-size: 11px; }
+.price-real { position: relative; margin: 0 0 20px; color: #c7cbd3; font: 700 13px var(--display); }
 .price-features { display: flex; flex-direction: column; gap: 0; border-block: 1px solid var(--line); padding: 15px 0; }
 .price-features span { display: flex; align-items: center; gap: 8px; padding: 8px 0; color: #b4bac4; font-size: 12px; }
 .price-features svg { width: 14px; color: var(--blue); flex: none; }
@@ -187,10 +189,10 @@ footer { border-top: 1px solid var(--line); background: #030307; }.footer-inner 
   .flow-step:nth-last-child(-n+2) { border-bottom: 0; }
   .community-points { flex-direction: column; gap: 12px; }
   .price-card { padding: 28px 22px; }
-  .price strong { font-size: 60px; }
+  .price strong { font-size: 42px; }
   .faq-layout { gap: 34px; }.faq-list button { grid-template-columns: 28px 1fr 20px; }.faq-list button b { font-size: 11px; }.faq-list article.active .faq-answer p { padding-left: 28px; }
   .final-cta { min-height: 480px; padding-bottom: 110px; }.final-inner > .button { width: 100%; }.final-inner > div { gap: 9px; flex-wrap: wrap; }.footer-inner { grid-template-columns: 1fr; gap: 20px; padding: 35px 0 95px; }.footer-inner nav { flex-wrap: wrap; }.footer-inner > span { justify-self: start; }
-  .mobile-sticky-cta { position: fixed; z-index: 45; right: 10px; bottom: 9px; left: 10px; min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 0 17px; border: 1px solid rgba(255,255,255,.18); border-radius: 10px; background: rgba(10,12,18,.9); box-shadow: 0 16px 40px rgba(0,0,0,.55); backdrop-filter: blur(18px); }.mobile-sticky-cta > span { color: #8d95a1; font: 650 8px var(--display); letter-spacing: .08em; text-transform: uppercase; }.mobile-sticky-cta b { display: flex; align-items: center; gap: 8px; color: white; padding: 10px 13px; border-radius: 6px; background: var(--gradient); font: 700 8px var(--display); letter-spacing: .08em; text-transform: uppercase; }.mobile-sticky-cta svg { width: 14px; }
+  .mobile-sticky-cta { position: fixed; z-index: 45; right: 10px; bottom: 9px; left: 10px; min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 0 17px; border: 1px solid rgba(255,255,255,.18); border-radius: 10px; background: rgba(10,12,18,.9); box-shadow: 0 16px 40px rgba(0,0,0,.55); backdrop-filter: blur(18px); }.mobile-sticky-cta > span { display: flex; flex-direction: column; gap: 2px; }.mobile-sticky-cta > span strong { color: white; font: 700 12px var(--display); letter-spacing: 0; }.mobile-sticky-cta > span em { color: #6b7380; font: 600 7px var(--display); font-style: normal; letter-spacing: .03em; }.mobile-sticky-cta b { display: flex; align-items: center; gap: 8px; color: white; padding: 10px 13px; border-radius: 6px; background: var(--gradient); font: 700 8px var(--display); letter-spacing: .08em; text-transform: uppercase; }.mobile-sticky-cta svg { width: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

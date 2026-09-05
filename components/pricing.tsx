@@ -3,11 +3,16 @@
 import { Check, ShieldCheck } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { trackEvent } from "@/lib/analytics";
-import { purchaseConfig } from "@/config/purchase";
+import { purchaseConfig, monthlyEquivalent } from "@/config/purchase";
 import { PurchaseButton } from "./purchase-button";
 
-const benefits = ["Cursos e tutoriais", "LeadHunter e CRM", "Criador de Sites e Prompts", "Biblioteca e templates", "Comunidade e suporte"];
+const benefits = [
+  "Cursos e Tutoriais", "LeadHunter", "CRM", "Criador de Sites", "Criador de Prompts",
+  "Gerador de Mensagens", "Biblioteca e Templates", "Comunidade",
+  "Atualizações durante o período de acesso",
+];
 const annual = purchaseConfig.plans.annual;
+const monthly = monthlyEquivalent(annual); // "R$ 41,42" — só destaque visual, nunca o valor cobrado
 
 export function Pricing() {
   const ref = useRef<HTMLElement>(null);
@@ -21,8 +26,18 @@ export function Pricing() {
 
       <article className="price-card" data-reveal data-tilt="3">
         <div className="price-glow"/>
-        <p className="price-card-name">{annual.name}</p>
-        <div className="price"><span>R$</span><strong>{annual.price?.replace("R$", "").trim()}</strong><small>{annual.billingLabel}</small></div>
+        <p className="price-card-name">{annual.name} · Plano Anual</p>
+
+        {monthly ? (
+          <>
+            <div className="price"><strong>{monthly}</strong><small>/mês</small></div>
+            <p className="price-note">equivalente no plano anual</p>
+            <p className="price-real">{annual.price} cobrados a cada 12 meses</p>
+          </>
+        ) : (
+          <div className="price"><span>R$</span><strong>{annual.price?.replace("R$", "").trim()}</strong><small>{annual.billingLabel}</small></div>
+        )}
+
         <div className="price-features">{benefits.map(item=><span key={item}><Check/>{item}</span>)}</div>
         <PurchaseButton plan="annual" className="button button-primary button-shine price-button">Quero entrar na Full Vibe</PurchaseButton>
         <div className="pricing-trust"><ShieldCheck/> Acesso liberado logo após a confirmação do pagamento.</div>

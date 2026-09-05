@@ -37,3 +37,21 @@ test("o ecossistema atual (CRM e Criador de Sites) está representado na landing
   assert.match(source, /Criador de Sites/);
   assert.match(source, /PWA/);
 });
+
+test("equivalente mensal (R$41,42) sempre aparece junto da cobrança real anual — nunca sozinho", async () => {
+  const pricing = await readFile("components/pricing.tsx", "utf8");
+  const faq = await readFile("components/faq.tsx", "utf8");
+  const stickyCta = await readFile("components/mobile-sticky-cta.tsx", "utf8");
+
+  // 497 / 12 = 41,41666... → arredondado pro que a Intl.NumberFormat("pt-BR") produz.
+  for (const file of [pricing, faq, stickyCta]) {
+    assert.match(file, /monthlyEquivalent|monthly/);
+  }
+  // A seção de preço nunca pode mostrar o valor mensal sem deixar claro que é
+  // equivalente do plano anual, com o valor real de R$497 visível ao lado.
+  assert.match(pricing, /equivalente/i);
+  assert.match(pricing, /12 meses/);
+  assert.match(pricing, /annual\.price/);
+  // O sticky mobile carrega o aviso de equivalência, não só o número.
+  assert.match(stickyCta, /equivalente/i);
+});
