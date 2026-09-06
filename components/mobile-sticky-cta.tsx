@@ -4,8 +4,9 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { purchaseConfig, monthlyEquivalent } from "@/config/purchase";
 
+const monthlyPlan = purchaseConfig.plans.monthly;
 const annual = purchaseConfig.plans.annual;
-const monthly = monthlyEquivalent(annual);
+const annualEquivalent = monthlyEquivalent(annual);
 
 /** Bottom bar shown on mobile after the hero, hidden once the pricing section is on screen. */
 export function MobileStickyCta() {
@@ -41,10 +42,10 @@ export function MobileStickyCta() {
   return (
     <a className={`mobile-sticky-cta ${visible ? "is-visible" : ""}`} href="#acesso" aria-hidden={!visible} tabIndex={visible ? 0 : -1}>
       <span>
-        <strong>{monthly ? `${monthly}/mês*` : `${annual.price}/ano`}</strong>
-        {monthly && <em>*equivalente a {annual.price}/ano</em>}
+        <strong>A partir de {monthlyPlan.price}/mês</strong>
+        {annualEquivalent && <em>no Anual, equivalente a {annualEquivalent}/mês</em>}
       </span>
-      <b>Quero entrar <ArrowRight /></b>
+      <b>Ver planos <ArrowRight /></b>
     </a>
   );
 }

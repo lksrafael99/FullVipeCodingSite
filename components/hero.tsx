@@ -31,9 +31,12 @@ export function Hero() {
         </h1>
         <p>Cursos, tutoriais, LeadHunter, CRM, criador de sites, prompts, mensagens, materiais e comunidade em uma única plataforma.</p>
         <div className="hero-actions">
-          <a className="button button-primary button-shine" href="#acesso" data-magnetic>Quero entrar na Full Vibe <ArrowUpRight /></a>
+          <a className="button button-primary button-shine" href="#acesso" data-magnetic>Escolha como começar <ArrowUpRight /></a>
           <a className="button button-secondary" href="#ferramentas">Ver tudo que está incluso <ArrowDown /></a>
         </div>
+        <p className="hero-price-hint">
+          Planos a partir de <b>R$79,90/mês</b> — no anual, equivalente a apenas <b>R$41,42/mês</b>.
+        </p>
       </div>
 
       <div className="hero-product" aria-label="Prévia visual da plataforma Full Vibe Coding">
