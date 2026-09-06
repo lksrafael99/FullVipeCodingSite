@@ -1,12 +1,16 @@
 import { purchaseConfig, type PlanId } from "@/config/purchase";
 import { trackPlanClick } from "@/lib/analytics";
+import { resolveCheckoutUrl } from "@/lib/checkout-url";
 
 export function startPurchase(planId: PlanId) {
   const plan = purchaseConfig.plans[planId];
   trackPlanClick(planId);
 
-  if (plan.checkoutUrl) {
-    window.open(plan.checkoutUrl, "_blank", "noopener,noreferrer");
+  // Só abre se a URL configurada passar na validação (HTTPS + host Kiwify) —
+  // já com region=br anexado corretamente. URL inválida cai no WhatsApp.
+  const checkoutUrl = resolveCheckoutUrl(plan.checkoutUrl);
+  if (checkoutUrl) {
+    window.open(checkoutUrl, "_blank", "noopener,noreferrer");
     return;
   }
 

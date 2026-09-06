@@ -143,6 +143,7 @@ button { font: inherit; }
 .price small { color: #8b93a0; font: 700 15px var(--display); text-transform: none; }
 .price-note { position: relative; margin: 0 0 14px; color: #6b7380; font-size: 11px; }
 .price-real { position: relative; margin: 0 0 20px; color: #c7cbd3; font: 700 13px var(--display); }
+.price-real-sub { display: block; margin-top: 3px; color: #6b7380; font-weight: 600; font-size: 10.5px; letter-spacing: .01em; }
 .price-features { display: flex; flex-direction: column; gap: 0; border-block: 1px solid var(--line); padding: 15px 0; }
 .price-features span { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; color: #b4bac4; font-size: 12px; line-height: 1.45; }
 .price-features svg { width: 14px; margin-top: 2px; color: var(--blue); flex: none; }

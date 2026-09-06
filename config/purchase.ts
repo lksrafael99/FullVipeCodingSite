@@ -12,6 +12,8 @@ export type PurchasePlan = {
   /** Recorrente (Kiwify recobra automaticamente) ou pagamento único. Muda a copy de "cobrados a cada X" vs "pagamento único". */
   recurring: boolean;
   billingLabel: string;
+  /** Parcelamento exibido na Kiwify (§10 — "12x de R$51,40", NUNCA "R$51,40/mês"). */
+  installmentsLabel?: string;
   checkoutUrl?: string;
   whatsappMessage: string;
 };
@@ -54,6 +56,7 @@ export const purchaseConfig = {
       billingCycleMonths: 12,
       recurring: true,
       billingLabel: "R$497 cobrados a cada 12 meses",
+      installmentsLabel: "12x de R$51,40",
       checkoutUrl: ANNUAL_CHECKOUT_URL,
       whatsappMessage: "Olá! Quero garantir meu acesso ao Plano Anual da Área de Membros Full Vibe Coding por R$ 497.",
     },

@@ -111,7 +111,10 @@ export function Pricing() {
             <strong>{annualEquivalent ?? annual.price}</strong><small>/ mês</small>
           </div>
           <p className="price-note">equivalente no plano anual</p>
-          <p className="price-real">{annual.price} cobrados a cada 12 meses</p>
+          <p className="price-real">
+            {annual.installmentsLabel ? `${annual.installmentsLabel} ou ` : ""}{annual.price} à vista
+            <span className="price-real-sub"> · {annual.price} cobrados a cada 12 meses</span>
+          </p>
 
           {savings && (
             <p className="plan-savings">
